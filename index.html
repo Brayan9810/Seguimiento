@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Seguimiento de Proyectos</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<h1>Seguimiento de Proyectos</h1>
+
+<!-- Pantalla de selección de tipo de usuario -->
+<div id="user-selection">
+    <p>Seleccione el tipo de usuario:</p>
+    <button onclick="setUserType('viewer')">Observador</button>
+    <button onclick="setUserType('editor')">Editor</button>
+</div>
+
+<!-- Contenido principal del proyecto, inicialmente oculto -->
+<div id="project-content" style="display: none;">
+    <!-- Fase 1 -->
+    <div class="project-phase" id="phase1">
+        <div class="phase-header">Fase 1: Inicio</div>
+        <label>Fecha de inicio:</label> <input type="date" id="start-date-phase1" onchange="saveData()"><br>
+        <label>Fecha de fin:</label> <input type="date" id="end-date-phase1" onchange="saveData()"><br>
+        <div class="activity">
+            <strong>Actividad 1</strong><br>
+            <label>Responsable:</label> <input type="text" id="responsible1-phase1" placeholder="Nombre del responsable" onchange="saveData()"><br>
+            <label>Avance:</label> <input type="number" min="0" max="100" id="progress-activity1-phase1" onchange="saveData(); updateProgress()"><br>
+        </div>
+        <div class="activity">
+            <strong>Actividad 2</strong><br>
+            <label>Responsable:</label> <input type="text" id="responsible2-phase1" placeholder="Nombre del responsable" onchange="saveData()"><br>
+            <label>Avance:</label> <input type="number" min="0" max="100" id="progress-activity2-phase1" onchange="saveData(); updateProgress()"><br>
+        </div>
+        <div class="progress-bar-container">
+            <div class="progress-bar" id="progress-bar-phase1" style="width: 0%;">0%</div>
+        </div>
+    </div>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
